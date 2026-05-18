@@ -39,11 +39,28 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
   const set = (k: keyof typeof form) => (v: string) => setForm(f => ({ ...f, [k]: v }));
 
+  const [error, setError] = useState<string | null>(null);
+
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise(r => setTimeout(r, 1400));
-    setSent(true);
+    setError(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Failed to send');
+      }
+      setSent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -133,6 +150,11 @@ export default function Contact() {
                       </svg>
                     )}
                   </button>
+                  {error && (
+                    <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.8rem', color: '#f87171', textAlign: 'center', marginTop: '4px' }}>
+                      {error}
+                    </p>
+                  )}
                 </motion.form>
               )}
             </AnimatePresence>
