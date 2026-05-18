@@ -18,7 +18,7 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
       <div style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 200,
         height: '52px', display: 'flex', alignItems: 'center',
-        justifyContent: 'space-between', padding: '0 28px',
+        justifyContent: 'space-between', padding: '0 16px',
         background: 'rgba(8,8,16,0.92)', backdropFilter: 'blur(18px)',
         borderBottom: '1px solid rgba(255,255,255,0.07)',
       }}>
@@ -48,9 +48,9 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
           }}>Live Demo</span>
         </div>
 
-        <span style={{
+        <span className="demo-name" style={{
           fontFamily: 'var(--font-inter)', fontSize: '0.78rem', color: '#475569',
-          maxWidth: '220px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+          maxWidth: '180px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
         }}>
           {name}
         </span>

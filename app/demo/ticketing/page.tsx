@@ -66,7 +66,7 @@ export default function TicketingDemo() {
     <div style={{ minHeight: '100vh', background: '#080810' }}>
       {/* Page header */}
       <div style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', background: 'rgba(13,13,26,0.8)' }}>
-        <div style={{ maxWidth: 1300, margin: '0 auto', padding: '24px 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
+        <div className="demo-hdr" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
           <div>
             <h1 style={{ fontFamily: 'var(--font-outfit)', fontSize: '1.5rem', fontWeight: 800, color: '#f4f4f8', marginBottom: '4px' }}>IT Support Portal</h1>
             <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.8rem', color: '#475569' }}>Raneen Company · IT Department</p>
@@ -90,7 +90,7 @@ export default function TicketingDemo() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 1300, margin: '0 auto', padding: '32px' }}>
+      <div className="demo-inner">
         {/* Stat cards */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: '12px', marginBottom: '28px' }}>
           {stats.map(s => (

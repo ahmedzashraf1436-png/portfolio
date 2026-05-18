@@ -84,7 +84,7 @@ export default function InventoryDemo() {
     <div style={{ minHeight: '100vh', background: '#080810' }}>
       {/* Header */}
       <div style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', background: 'rgba(13,13,26,0.8)' }}>
-        <div style={{ maxWidth: 1300, margin: '0 auto', padding: '24px 32px' }}>
+        <div className="demo-hdr">
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap', marginBottom: '24px' }}>
             <div>
               <h1 style={{ fontFamily: 'var(--font-outfit)', fontSize: '1.5rem', fontWeight: 800, color: '#f4f4f8', marginBottom: '4px' }}>
@@ -109,7 +109,7 @@ export default function InventoryDemo() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 1300, margin: '0 auto', padding: '32px' }}>
+      <div className="demo-inner">
         {!selectedBranch ? (
           <>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px', flexWrap: 'wrap', gap: '12px' }}>

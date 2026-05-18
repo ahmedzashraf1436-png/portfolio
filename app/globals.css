@@ -188,6 +188,66 @@ h1, h2, h3, h4 {
 /* ── Horizontal rule ──────────────────────────────────────── */
 .hr { width: 100%; height: 1px; background: rgba(255,255,255,0.06); }
 
+/* ── Demo pages ───────────────────────────────────────────── */
+.demo-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 16px;
+}
+@media (min-width: 640px) { .demo-inner { padding: 24px; } }
+@media (min-width: 1024px) { .demo-inner { padding: 32px; } }
+
+.demo-hdr {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 14px 16px;
+}
+@media (min-width: 640px) { .demo-hdr { padding: 20px 24px; } }
+@media (min-width: 1024px) { .demo-hdr { padding: 24px 32px; } }
+
+.demo-ecom-hdr {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  gap: 12px;
+}
+@media (min-width: 640px) { .demo-ecom-hdr { padding: 0 24px; } }
+@media (min-width: 1024px) { .demo-ecom-hdr { padding: 0 32px; } }
+
+.demo-ecom-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+@media (min-width: 640px) { .demo-ecom-body { padding: 32px 24px; } }
+@media (min-width: 1024px) { .demo-ecom-body { padding: 40px 32px; } }
+
+.demo-name { display: none; }
+@media (min-width: 500px) { .demo-name { display: block; } }
+
+.demo-welcome { display: none; }
+@media (min-width: 600px) { .demo-welcome { display: inline; } }
+
+/* chart grids: 1-col on mobile, side-by-side on wider screens */
+.chart-2col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+@media (min-width: 900px) { .chart-2col { grid-template-columns: 1fr 1fr; } }
+
+.chart-3col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 700px) { .chart-3col { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } }
+
 /* ── Experience card responsive layout ───────────────────── */
 .exp-card {
   padding: 24px 20px;

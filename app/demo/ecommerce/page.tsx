@@ -58,7 +58,7 @@ export default function EcommerceDemo() {
         background: 'rgba(8,8,16,0.95)', backdropFilter: 'blur(18px)',
         borderBottom: '1px solid rgba(255,255,255,0.07)',
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div className="demo-ecom-hdr">
           <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
             <span style={{ fontFamily: 'var(--font-outfit)', fontWeight: 800, fontSize: '1.2rem', color: '#f4f4f8', letterSpacing: '-0.03em' }}>
               Tech<span style={{ color: '#6366f1' }}>Store</span>
@@ -78,7 +78,7 @@ export default function EcommerceDemo() {
             </nav>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <span style={{ fontFamily: 'var(--font-inter)', fontSize: '0.8rem', color: '#475569' }}>
+            <span className="demo-welcome" style={{ fontFamily: 'var(--font-inter)', fontSize: '0.8rem', color: '#475569' }}>
               Welcome, Ahmed
             </span>
             <button onClick={() => { setCartOpen(true); setCheckoutStep('cart'); }} style={{
@@ -105,12 +105,12 @@ export default function EcommerceDemo() {
         </div>
       </header>
 
-      <main style={{ maxWidth: 1200, margin: '0 auto', padding: '40px 32px' }}>
+      <main className="demo-ecom-body">
         {view === 'shop' ? (
           <>
             {/* Hero banner */}
             <div style={{
-              borderRadius: '20px', marginBottom: '40px', padding: '48px',
+              borderRadius: '20px', marginBottom: '40px', padding: 'clamp(20px, 5vw, 48px)',
               background: 'linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(139,92,246,0.08) 100%)',
               border: '1px solid rgba(99,102,241,0.2)',
               display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '24px',

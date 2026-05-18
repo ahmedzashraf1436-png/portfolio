@@ -139,7 +139,7 @@ export default function DataVizDemo() {
     <div style={{ minHeight: '100vh', background: '#080810' }}>
       {/* Header */}
       <div style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', background: 'rgba(13,13,26,0.8)' }}>
-        <div style={{ maxWidth: 1300, margin: '0 auto', padding: '24px 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
+        <div className="demo-hdr" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
           <div>
             <h1 style={{ fontFamily: 'var(--font-outfit)', fontSize: '1.5rem', fontWeight: 800, color: '#f4f4f8', marginBottom: '4px' }}>Analytics Dashboard</h1>
             <p style={{ fontFamily: 'var(--font-inter)', fontSize: '0.8rem', color: '#475569' }}>Raneen Company · Business Intelligence Platform</p>
@@ -175,7 +175,7 @@ export default function DataVizDemo() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 1300, margin: '0 auto', padding: '32px' }}>
+      <div className="demo-inner">
         {/* KPI cards */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '14px', marginBottom: '24px' }}>
           {[
@@ -198,7 +198,7 @@ export default function DataVizDemo() {
         </div>
 
         {/* Chart grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(500px,1fr))', gap: '16px', marginBottom: '16px' }}>
+        <div className="chart-2col">
           {/* Revenue line chart */}
           <ChartCard title="Revenue vs Target" label="Performance">
             <ResponsiveContainer width="100%" height={240}>
@@ -229,7 +229,7 @@ export default function DataVizDemo() {
           </ChartCard>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))', gap: '16px' }}>
+        <div className="chart-3col">
           {/* User growth area chart */}
           <ChartCard title="User Growth" label="Acquisition">
             <ResponsiveContainer width="100%" height={220}>
