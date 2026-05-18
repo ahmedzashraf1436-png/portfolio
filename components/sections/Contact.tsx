@@ -52,8 +52,9 @@ export default function Contact() {
         body: JSON.stringify(form),
       });
       if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || 'Failed to send');
+        let errMsg = 'Failed to send';
+        try { const data = await res.json(); errMsg = data.error || errMsg; } catch {}
+        throw new Error(errMsg);
       }
       setSent(true);
     } catch (err) {
