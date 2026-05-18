@@ -46,19 +46,23 @@ export default function Contact() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: 'ad118898-9a6d-42bb-9ad7-f6fc296e1cbd',
+          subject: `New portfolio message from ${form.name}`,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          botcheck: '',
+        }),
       });
-      if (!res.ok) {
-        let errMsg = 'Failed to send';
-        try { const data = await res.json(); errMsg = data.error || errMsg; } catch {}
-        throw new Error(errMsg);
-      }
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message || 'Failed to send');
       setSent(true);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong');
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
     } finally {
       setLoading(false);
     }
