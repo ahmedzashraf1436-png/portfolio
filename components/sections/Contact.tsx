@@ -138,7 +138,7 @@ export default function Contact() {
                 </motion.div>
               ) : (
                 <motion.form key="form" onSubmit={submit} exit={{ opacity: 0 }} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '14px' }}>
                     <Field label="Name"  value={form.name}  onChange={set('name')} />
                     <Field label="Email" type="email" value={form.email} onChange={set('email')} />
                   </div>

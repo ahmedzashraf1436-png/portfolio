@@ -30,7 +30,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-* { cursor: none !important; }
+@media (pointer: fine) { * { cursor: none !important; } }
 
 ::selection { background: rgba(99,102,241,0.3); color: #fff; }
 
@@ -56,12 +56,15 @@ body {
 
 /* ── Section ──────────────────────────────────────────────── */
 .section {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   position: relative;
   z-index: 10;
 }
 @media (min-width: 768px) {
+  .section { padding-top: 120px; padding-bottom: 120px; }
+}
+@media (min-width: 1024px) {
   .section { padding-top: 140px; padding-bottom: 140px; }
 }
 
@@ -184,6 +187,42 @@ h1, h2, h3, h4 {
 
 /* ── Horizontal rule ──────────────────────────────────────── */
 .hr { width: 100%; height: 1px; background: rgba(255,255,255,0.06); }
+
+/* ── Experience card responsive layout ───────────────────── */
+.exp-card {
+  padding: 24px 20px;
+  position: relative;
+}
+@media (min-width: 640px) {
+  .exp-card { padding: 36px 40px; }
+}
+
+.exp-badge {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.6rem;
+  color: #475569;
+}
+@media (min-width: 640px) {
+  .exp-badge {
+    position: absolute;
+    top: 36px;
+    right: 40px;
+    margin-bottom: 0;
+  }
+}
+
+.exp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+@media (min-width: 640px) {
+  .exp-grid {
+    grid-template-columns: minmax(140px, auto) 1fr;
+    gap: 48px;
+  }
+}
 
 /* ── Noise grain on body ──────────────────────────────────── */
 body::before {

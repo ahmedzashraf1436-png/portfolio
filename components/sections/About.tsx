@@ -50,7 +50,7 @@ export default function About() {
                 </p>
 
                 {/* Quick info */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px 24px', paddingTop: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px 24px', paddingTop: '8px' }}>
                   {[
                     ['Location',   'Sheikh Zayed City, Egypt'],
                     ['Education',  'BIS — Canadian Int\'l College'],
@@ -59,7 +59,7 @@ export default function About() {
                   ].map(([k, v]) => (
                     <div key={k}>
                       <span className="label" style={{ fontSize: '0.62rem', marginBottom: '3px' }}>{k}</span>
-                      <span style={{ fontFamily: 'var(--font-inter)', fontSize: '0.82rem', color: '#f4f4f8', lineHeight: 1.4, display: 'block' }}>{v}</span>
+                      <span style={{ fontFamily: 'var(--font-inter)', fontSize: '0.82rem', color: '#f4f4f8', lineHeight: 1.4, display: 'block', wordBreak: 'break-all' }}>{v}</span>
                     </div>
                   ))}
                 </div>

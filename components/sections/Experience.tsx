@@ -77,21 +77,16 @@ export default function Experience() {
         {/* Cards */}
         <div className="reveal" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {items.map((item, i) => (
-            <div key={i} className="glass-card" style={{ padding: '36px 40px', position: 'relative' }}>
+            <div key={i} className="glass-card exp-card">
 
               {/* Type badge */}
-              <span className="label" style={{
-                position: 'absolute', top: '32px', right: '36px',
-                fontSize: '0.6rem', color: '#475569',
-              }}>
-                {item.type}
-              </span>
+              <span className="label exp-badge">{item.type}</span>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'minmax(140px, auto) 1fr', gap: '48px' }}>
+              <div className="exp-grid">
 
                 {/* Left: period */}
-                <div style={{ paddingTop: '2px' }}>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#475569', letterSpacing: '0.04em', lineHeight: 1.5, display: 'block' }}>
+                <div>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: '#475569', letterSpacing: '0.04em', lineHeight: 1.5, display: 'block' }}>
                     {item.period}
                   </span>
                 </div>
